@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-
+import { Route, Routes } from 'react-router-dom';
+import BookForm from './components/BookForm';
 
 function App() {
 	const [books, setBooks] = useState([]);
 	const [searchText, setSearchText] = useState("");
-
-  
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const lookupBooks = async () => {
@@ -51,8 +50,12 @@ function App() {
 							)
 						})}
 					</ul>
+					<BookForm books={books}/>
 				</>
 			)}
+			<Routes>
+				<Route path='/add' element={<BookForm books={books} setBooks={setBooks}/>}/>
+			</Routes>
 		</div>
 	)
 }

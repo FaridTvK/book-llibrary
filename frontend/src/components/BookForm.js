@@ -7,8 +7,13 @@ const BookForm = () => {
   const [bookAuthor, setBookAuthor] = useState("");
   const [bookImageURL, setBookImageURL] = useState("");
 
-  const [post, setPost] = useState({});
-  const URL = "http://localhost:3003";
+
+
+  const [books, setBooks] = useState({})
+
+
+
+  const URL = "http://localhost:3003/books";
 
   const titleHandler = (e) => {
     setBookTitle(e.target.value);
@@ -19,26 +24,41 @@ const BookForm = () => {
   const imageHandler = (e) => {
     setBookImageURL(e.target.value);
   };
+
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    const newBook = {
+      title: bookTitle,
+      author: bookAuthor,
+      imageUrl: bookImageURL
+    }
 
-    setPost([
-      ...post,
-      { title: bookTitle, author: bookAuthor, imageUrl: bookImageURL },
-    ]);
-  };
-
-  useEffect(() => {
+    setBooks(newBook);
+    console.log(newBook)
     const fetchData = async () => {
       try {
-        axios.post(URL, { ...post }).then((response) => setPost(response.data));
+        // debugger
+        await axios({
+          method: 'post',
+          url: URL,
+          data: {
+            title: bookTitle,
+            author: bookAuthor,
+            imageUrl: bookImageURL
+          },
+        });
       } catch (err) {
-        alert(err);
+        console.log(err);
       }
     };
 
     fetchData();
-  }, []);
+  };
+
+  // useEffect(() => {
+
+  // }, []);
   return (
     <form action="POST" className="book-form" onSubmit={onSubmitHandler}>
       <fieldset>

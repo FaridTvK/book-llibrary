@@ -10,7 +10,7 @@ export const bookSchemaValidator = [
     .trim()
     .isLength({min:4})
     .withMessage("has to have min 4 Character"),
-    body("imageURL")
+    body("imageUrl")
     .trim()
     .notEmpty()
     .isURL()

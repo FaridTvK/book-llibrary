@@ -2,7 +2,6 @@ import express from "express";
 import "dotenv/config"
 import connnectToMongoose from "./util/connect-mongoose.js";
 import cors from "cors"
-import axios from "axios";
 import apiroutes from "./routes/api-routes.js"
 import cookieParser from "cookie-parser";
 

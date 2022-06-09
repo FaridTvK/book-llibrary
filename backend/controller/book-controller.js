@@ -1,10 +1,19 @@
 import BookSchema from "../model/book-schema.js";
 import axios from "axios";
 
+
+
+
+
 const addBook = async (req,res) => {
+	console.log('addbook',req.body);
+	try{
     const newBook = new BookSchema(req.body)
     await newBook.save()
-    res.send("new Book added!")
+    res.send("it has saved")
+}catch(err){
+	console.log(err)
+}
 }
 
 const updateBook = async (req ,res ) => {

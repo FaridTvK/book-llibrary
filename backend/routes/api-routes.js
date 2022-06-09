@@ -11,7 +11,7 @@ router.route("/search")
 
 router.route("/books")
       // .post(bookSchemaValidator)
-      .post(bookSchemaValidator, validateMyRequest,addBook)
+      .post(bookSchemaValidator,addBook)
 
 
 router.route("/:id")
