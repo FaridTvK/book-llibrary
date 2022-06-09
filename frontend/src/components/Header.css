@@ -1,0 +1,27 @@
+header {
+    padding: .5% 0 1% 0  ;
+    background: linear-gradient(to bottom right, #333, #121);
+}
+header h1 {
+    margin-left: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+.navbar nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+
+}
+nav > * {
+    color: snow;
+
+    font-size: 1.3em;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.active {
+    color: lightcoral;
+}
