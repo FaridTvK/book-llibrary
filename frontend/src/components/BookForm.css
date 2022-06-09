@@ -1,0 +1,42 @@
+form {
+    margin: 5% auto;
+    width: 75vw;
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+}
+form fieldset {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+form fieldset label {
+    margin-bottom: 10px;
+
+    color: lightcoral;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+}
+form fieldset input {
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid black;
+    
+    font-size: 1.5em;
+    font-family: m;
+}
+form button {
+    border: none;
+
+    margin: 0 auto;
+    padding: 1% 2%;
+    border-radius: 20px;
+    background-color: lightcoral;
+}
+form button:hover {
+    background-color: lightgreen;
+}
